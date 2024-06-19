@@ -1,0 +1,12 @@
+{% extends 'pages/base.html' %}
+
+
+{% block content %}
+
+    <form action="{% url 'crm:update' customer.id %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <input type="submit" value="Update" class="btn btn-dark">
+    </form>
+{% endblock content %}

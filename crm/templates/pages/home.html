@@ -1,0 +1,58 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Customer List</h1>
+    <table class="table table-striped table-hover">
+        <thead class="text-light bg-dark">
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Country</th>
+                <th>City</th>
+                <th>National ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in customers %}
+            <tr>
+                <td><a href="{% url 'crm:detail' customer.id %}" style="text-decoration: none; color: black;"> {{ customer.id }}</a></td>
+                <td>{{ customer.first_name }}</td>
+                <td>{{ customer.last_name }}</td>
+                <td>{{ customer.email }}</td>
+                <td>{{ customer.phone }}</td>
+                <td>{{ customer.address }}</td>
+                <td>{{ customer.country }}</td>
+                <td>{{ customer.city }}</td>
+                <td>{{ customer.nationalID }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'crm:new' %}" class="btn btn-dark"> Add New Customer </a>
+</body>
+</html>
+
+{% endblock content %}

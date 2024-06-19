@@ -1,0 +1,9 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+<form action="{% url 'crm:registration' %}" method="post">
+    <h3>Registration Form</h3>
+    {{form.as_p}}
+    <input type="submit" class="btn btn-dark">
+</form>
+{% endblock content %}

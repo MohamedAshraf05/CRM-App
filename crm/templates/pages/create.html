@@ -1,0 +1,11 @@
+{% extends 'pages/base.html' %}
+
+
+{% block content %}
+    <h1> Create New Customer </h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-dark" value="Create">
+    </form>
+{% endblock content %}

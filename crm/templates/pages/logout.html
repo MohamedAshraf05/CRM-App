@@ -1,0 +1,13 @@
+{% extends 'pages/base.html' %}
+
+
+{% block content %}
+
+    <h1>Confirm Logging out</h1>
+
+    <form action="{% url 'crm:login' %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Confirm">
+        <a href="{% url 'crm:crm-view' %}">Cancel</a>
+    </form>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+<h1>Customer Detail</h1>
+<div class="card m-5" style="width: fit-content;">
+    <div class="card-header">
+      {{customersDetails.first_name}}
+      {{customersDetails.last_name}}
+    </div>
+    <div class="card-body">
+      
+      <p class="card-text">
+        
+        <strong> Email : </strong> {{customersDetails.email}} <br>
+        <strong> Adress : </strong> {{customersDetails.address}} <br>
+        <strong> Phone : </strong> {{customersDetails.phone}} <br>
+        <strong> Country : </strong> {{customersDetails.country}} <br>
+        <strong> City : </strong> {{customersDetails.city}} <br>
+        <strong> National id : </strong> {{customersDetails.nationalID}} <br>
+      </p>
+      <a href="{% url 'crm:update' customersDetails.id %}" class="btn btn-dark">update</a>
+      <a href="{% url 'crm:delete' customersDetails.id %}" class="btn btn-danger">Delete</a>
+    </div>
+  </div>
+{% endblock content %}

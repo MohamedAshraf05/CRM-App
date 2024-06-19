@@ -1,0 +1,13 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+<div class="col-md-6 offset-md-1 mt-3">
+    <h3>Login</h3>
+    <br>
+    <form action="{% url 'crm:login' %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Login" id="input" class="btn btn-dark">
+    </form>
+</div>
+{% endblock content %}
