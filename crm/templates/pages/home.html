@@ -38,7 +38,7 @@
         <tbody>
             {% for customer in customers %}
             <tr>
-                <td><a href="{% url 'crm:detail' customer.id %}" style="text-decoration: none; color: black;"> {{ customer.id }}</a></td>
+                <td><a href="{% url 'crm:detail' customer.id %}" style="text-decoration: none; color: black;"> {{ customer.Custom_id }}</a></td>
                 <td>{{ customer.first_name }}</td>
                 <td>{{ customer.last_name }}</td>
                 <td>{{ customer.email }}</td>
